@@ -1,0 +1,119 @@
+/* ======= GLOBAL ======= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #dfe9f5;
+  color: #2b3a4a;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header, footer {
+  text-align: center;
+  padding: 1.2rem;
+  color: #2b3a4a;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* ======= CARDS / LAYOUT ======= */
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0px 4px 14px rgba(0,0,0,0.08);
+  max-width: 450px;
+  width: 90%;
+}
+
+.center {
+  text-align: center;
+  margin: auto;
+}
+
+/* ======= TEXT ======= */
+.muted {
+  opacity: 0.7;
+}
+.small {
+  font-size: 0.9rem;
+}
+
+/* ======= BUTTONS ======= */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  margin-top: 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.btn.primary {
+  background: #4e8df5;
+  color: #fff;
+}
+.btn.primary:hover {
+  background: #3d7fe0;
+}
+
+.btn.secondary {
+  background: #ffdd69;
+  color: #3f3f3f;
+}
+.btn.secondary:hover {
+  background: #f3cb4f;
+}
+
+/* ======= VIDEO FEED ======= */
+.feed {
+  width: 90%;
+  max-width: 700px;
+  border-radius: 14px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+  margin-top: 1rem;
+}
+
+/* ======= TIMER ======= */
+.timer {
+  font-size: 3rem;
+  margin: 1rem 0;
+  color: #3e4f60;
+}
+
+/* ======= GAME BOX ======= */
+.game-box {
+  width: 230px;
+  height: 230px;
+  margin: 1rem auto;
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #6c7b8d;
+  color: #fff;
+  font-size: 1.4rem;
+  transition: background 0.3s;
+}
+
+/* ======= LINK STYLE ======= */
+a {
+  color: #3e6ac5;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
