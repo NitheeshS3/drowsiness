@@ -1,0 +1,9 @@
+kaggle
+tensorflow
+opencv-python
+mediapipe
+numpy
+scikit-learn
+tqdm
+flask
+gunicorn
