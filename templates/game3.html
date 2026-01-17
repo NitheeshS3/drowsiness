@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card center">
+  <h2>Rapid Fire Quiz 🔥</h2>
+  <p class="muted">Answer quickly to wake your brain!</p>
+
+  <div id="quiz-box"></div>
+  <p id="status" class="muted"></p>
+
+  <a href="{{ url_for('awake') }}" class="btn" id="awakeBtn" style="display:none;">I'm Awake ✅</a>
+  <p><a href="{{ url_for('game_select') }}" class="small">Back</a></p>
+</section>
+
+<script>
+const questions = [
+  { q: "What is 5 + 7?", a: "12" },
+  { q: "Type the color of the sky:", a: "blue" },
+  { q: "What is 9 - 4?", a: "5" },
+  { q: "Spell 'alert' backwards:", a: "trela" },
+  { q: "What is 3 × 4?", a: "12" }
+];
+
+let index = 0;
+let correct = 0;
+const quizBox = document.getElementById("quiz-box");
+const status = document.getElementById("status");
+const awakeBtn = document.getElementById("awakeBtn");
+
+function ask() {
+  if (index >= questions.length) return done();
+
+  quizBox.innerHTML = `
+    <h3>${questions[index].q}</h3>
+    <input id="answer" class="input-box" placeholder="Your answer">
+    <button class="btn" onclick="check()">Submit</button>
+  `;
+}
+
+function check() {
+  const val = document.getElementById("answer").value.trim().toLowerCase();
+  if (val === questions[index].a.toLowerCase()) {
+    correct++;
+    status.textContent = "✅ Correct!";
+  } else {
+    status.textContent = "❌ Wrong — Try the next.";
+  }
+  index++;
+  setTimeout(ask, 700);
+}
+
+function done() {
+  quizBox.innerHTML = "";
+  status.textContent = `You scored ${correct}/${questions.length}!`;
+
+  if (correct >= 3) {
+    status.textContent += " 🎉 Great! You're awake!";
+    awakeBtn.style.display = "inline-block";
+  } else {
+    status.textContent += " 😴 Not enough. Restarting quiz...";
+    index = 0; correct = 0;
+    setTimeout(ask, 2000);
+  }
+}
+
+ask();
+</script>
+
+<style>
+.input-box {
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  margin-bottom: 10px;
+}
+</style>
+{% endblock %}

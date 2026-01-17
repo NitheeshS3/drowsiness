@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card center">
+  <h2>Choose a Wake-Up Game 🎮</h2>
+  <p class="muted">Pick one to get alert again!</p>
+
+  <div class="row center" style="gap: 20px; margin-top: 20px;">
+    <a href="{{ url_for('game1') }}" class="btn">Memory Boost 🎨</a>
+    <a href="{{ url_for('game2') }}" class="btn">Reaction Speed ⚡</a>
+    <a href="{{ url_for('game3') }}" class="btn">Rapid Fire Quiz 🔥</a>
+
+  </div>
+
+  <p class="small"><a href="{{ url_for('detect') }}">Back</a></p>
+</section>
+{% endblock %}

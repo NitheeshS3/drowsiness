@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card center">
+  <h2>Take a Rest 😴</h2>
+
+  <p class="muted">How long would you like to rest?</p>
+
+  <form action="{{ url_for('rest') }}" method="post" class="center" style="max-width: 250px;">
+    <input type="number" name="minutes" min="1" max="60" required placeholder="Minutes"
+           class="input">
+    <button type="submit" class="btn">Start Rest Timer ⏱️</button>
+  </form>
+
+  <p class="small"><a href="{{ url_for('detect') }}">Back to detection</a></p>
+</section>
+
+<style>
+.input {
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+</style>
+{% endblock %}

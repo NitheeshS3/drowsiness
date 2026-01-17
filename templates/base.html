@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Drowsy Buddy 🐨</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+  <h1>Drowsy Buddy 🐨</h1>
+</header>
+
+<main>
+  {% block content %}{% endblock %}
+</main>
+
+<footer>
+  <p class="muted small">Made with 💙 to keep you healthy & safe</p>
+</footer>
+</body>
+</html>

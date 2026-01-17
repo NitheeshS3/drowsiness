@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card center">
+  <h2>Reaction Test ⚡</h2>
+  <p>Wait for the box to turn GREEN, then tap FAST!</p>
+
+  <div id="box" style="width:120px;height:120px;background:red;border-radius:12px;margin:25px auto;"></div>
+
+  <p id="status" class="muted"></p>
+
+  <a href="{{ url_for('awake') }}" class="btn" style="display:none;" id="awakeBtn">I'm Awake ✅</a>
+  <p><a href="{{ url_for('game_select') }}" class="small">Back</a></p>
+</section>
+
+<script>
+let box = document.getElementById("box");
+let status = document.getElementById("status");
+let awakeBtn = document.getElementById("awakeBtn");
+
+let readyTime = Math.random()*3000 + 1500;
+setTimeout(()=>{ 
+  box.style.background = "green"; 
+  status.textContent = "Tap now!";
+  box.onclick = ()=> {
+    status.textContent = "Nice reaction! 🎉";
+    awakeBtn.style.display="inline-block";
+  }
+}, readyTime);
+</script>
+{% endblock %}

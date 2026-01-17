@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card center">
+  <h2>You seem drowsy 😴</h2>
+  <p class="muted">Let's help you stay safe.</p>
+
+  <div class="row center" style="gap: 20px; margin-top: 20px;">
+    <a href="{{ url_for('rest') }}" class="btn">Take a Short Rest ⏱️</a>
+    <a href="{{ url_for('game_select') }}" class="btn">Play a Game 🎮</a>
+  </div>
+
+  <p class="small"><a href="{{ url_for('detect') }}">Return to Detection</a></p>
+</section>
+{% endblock %}

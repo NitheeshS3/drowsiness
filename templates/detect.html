@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="center">
+  <h2>Live Detection 🎥</h2>
+  <img src="{{ url_for('video_feed') }}" class="feed">
+
+  <p class="muted small">If drowsiness is detected, I’ll guide you gently 💞</p>
+</section>
+
+<script>
+function checkDrowsy(){
+  fetch("/status")
+    .then(r => r.text())
+    .then(state => {
+      if(state === "drowsy"){
+        window.location.href = "{{ url_for('drowsy') }}";   // ✅ Auto Redirect
+      }
+    });
+}
+setInterval(checkDrowsy, 1000);  // check once per second
+</script>
+{% endblock %}
